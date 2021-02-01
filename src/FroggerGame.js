@@ -3,7 +3,7 @@ var ctx = canvas.getContext('2d');
 var gameInterval, hEnemiesInterval, eEnemiesInterval;
 
 var bgMusic = document.createElement('audio');
-bgMusic.src = '../assets/backgroundMusic.ogg';
+bgMusic.src = 'assets/backgroundMusic.ogg';
 bgMusic.toggleAttribute('loop');
 var toggleMusic = document.querySelector('span');
 var muted = true;
@@ -19,26 +19,26 @@ toggleMusic.addEventListener('click', function () {
 });
 
 var playerWalk = document.createElement('audio');
-playerWalk.src = '../assets/playerWalk.mp3';
+playerWalk.src = 'assets/playerWalk.mp3';
 
 var playerScore = document.createElement('audio');
-playerScore.src = '../assets/playerScore.mp3';
+playerScore.src = 'assets/playerScore.mp3';
 
 var playerCollision = document.createElement('audio');
-playerCollision.src = '../assets/playerCollide.mp3';
+playerCollision.src = 'assets/playerCollide.mp3';
 
 var resetGame = document.createElement('audio');
-resetGame.src = '../assets/reset.mp3';
+resetGame.src = 'assets/reset.mp3';
 
 var gameOver = document.createElement('audio');
-gameOver.src = '../assets/gameOver.mp3';
+gameOver.src = 'assets/gameOver.mp3';
 
 var player = {
   score: 0,
   lives: 3,
   posX: 8,
   posY: 15,
-  image: '../assets/frogUp.png',
+  image: 'assets/frogUp.png',
 
   drawPlayer: function () {
     addImageComponent(
@@ -54,7 +54,7 @@ var player = {
     this.score = 0;
     this.lives = 3;
     this.resetPlayerPos();
-    this.image = '../assets/frogUp.png';
+    this.image = 'assets/frogUp.png';
   },
   resetPlayerPos: function () {
     this.posX = 8;
@@ -62,7 +62,7 @@ var player = {
   },
 };
 
-const enemiesHardImage = '../assets/Car2.png';
+const enemiesHardImage = 'assets/Car2.png';
 
 var enemiesHard = [
   {
@@ -97,7 +97,7 @@ var enemiesHard = [
   },
 ];
 
-const enemiesEasyImage = '../assets/Car1.png';
+const enemiesEasyImage = 'assets/Car1.png';
 
 var enemiesEasy = [
   {
@@ -156,7 +156,7 @@ function clearGame() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-const background = '../assets/background.svg';
+const background = 'assets/background.svg';
 
 function endGame() {
   clearGame();
@@ -253,7 +253,7 @@ function playerControl(key) {
       if (player.posX === 0) break;
       //left
       else {
-        player.image = '../assets/frogLeft.png';
+        player.image = 'assets/frogLeft.png';
         player.posX--;
         playerWalk.play();
         break;
@@ -263,7 +263,7 @@ function playerControl(key) {
       if (player.posY === 0) break;
       //up
       else {
-        player.image = '../assets/frogUp.png';
+        player.image = 'assets/frogUp.png';
         player.posY--;
         playerWalk.play();
         break;
@@ -272,7 +272,7 @@ function playerControl(key) {
       if (player.posX === 15) break;
       //right
       else {
-        player.image = '../assets/frogRight.png';
+        player.image = 'assets/frogRight.png';
         player.posX++;
         playerWalk.play();
         break;
@@ -282,7 +282,7 @@ function playerControl(key) {
       if (player.posY === 15) break;
       //down
       else {
-        player.image = '../assets/frogDown.png';
+        player.image = 'assets/frogDown.png';
         player.posY++;
         playerWalk.play();
         break;
